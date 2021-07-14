@@ -11,6 +11,11 @@ A meta-algorithm uses either a single base learner while having the treatment in
 
 Confidence intervals of average treatment effect estimates are calculated based on the lower bound formular (7) from :cite:`imbens2009recent`.
 
+
+A review of the S-Learners and T-Learners
+~~~~~~~~~
+Below we review these two metalearners. The difference between the two is subtle. Both approaches hinge off of estimating conditional means. The key difference is that the T-learner assigns unique importance to treatment status, whereas the S-learner handles it like any other feature.
+
 S-Learner
 ~~~~~~~~~
 
@@ -49,7 +54,7 @@ Estimate the average outcomes :math:`\mu_0(x)` and :math:`\mu_1(x)`:
    \mu_0(x) = E[Y(0)|X=x]
    \mu_1(x) = E[Y(1)|X=x]
 
-using machine learning models.
+using machine learning models. Importantly, \mu_0(x) and \mu_1(x) are estimated separately---potentially even based on different machine learning models.
 
 **Stage 2**
 
